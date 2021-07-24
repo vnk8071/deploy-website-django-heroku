@@ -26,6 +26,14 @@ Install all packages in local machine:
 python requirement.txt
 ```
 
+Create database by Heroku Postgres
+```bash
+heroku addons
+
+heroku addons:create heroku-postgresql:hobby-dev
+```
+(With 1 account just have 1 database free on heroku is name hobby-dev)
+
 In my website, I use git of heroku and it is the same with Github. 
 ```bash
 git init
