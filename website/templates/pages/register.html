@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>REGISTER</title>
+</head>
+<body style="background-color: silver;">
+    <div class="container-fluid" style= "min-height: 95%;">
+        <div class= "content-section">
+            <center><img src="{% static 'images/Sunset.jpg' %}" class="responsive-img" width="40%"/></center>
+            <center><h1>Register</h1></center>
+            <center><form action= '.' method= 'POST'>
+                {% csrf_token %}
+                {{form.as_p}}
+                <input type="submit" value="Register"/>
+            </form>
+            <div class= 'border-top pt-3'>
+                <small class= "text">
+                    Have already account? <a class= 'ml-2' href="{% url 'login' %}">Sign In</a>
+                </small>
+            </div></center>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+</head>
+<body style="background-color: silver;">
+    <center>
+        <div class="container-fluid" style= "min-height: 95%;">
+            <div class= "row">
+                <center><img src="{% static 'images/Sunset.jpg' %}" class="responsive-img" width="40%"/></center>
+                <center><h1>Login</h1></center>
+                <form method= 'POST'>
+                    {% csrf_token %}
+                    {% for key, value in form.errors.items %}
+                        {{value}}
+                    {% endfor %}
+                    <p><label>Username: </label>{{form.username}}</p>
+                    <p><label>Password: </label>{{form.password}}</p>
+                    <input type= 'hidden' name='next' value='/'/>
+                    <input type= 'submit' value= 'Login'/>
+                </form>
+                <div class= 'border-top pt-3'>
+                    <small class= "text-muted">
+                        Have account yet? <a class= 'ml-2' href="{% url 'register' %}">Sign Up</a>
+                    </small>
+                </div>
+            </div>
+        </div>
+    </center>
+</body>
+</html>

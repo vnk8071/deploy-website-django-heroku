@@ -1,0 +1,58 @@
+{% extends "pages/base.html" %}
+{% load static %}
+{% block title %} The KDiary {% endblock %}
+
+{% block content %}
+<html>
+    <head>
+        <style>
+        div.container {
+        width: 100%;
+        }
+
+        nav {
+        float: left;
+        max-width: 400px;
+        padding: 0.5rem;
+        }
+        
+        article {
+        margin-left: 450px;
+        padding: 0.5rem;
+        overflow: hidden;
+        }
+        
+        </style>
+    </head>
+    <body>
+        <div class="container"> 
+            <nav>
+                <h2><u>Information</u></h2>
+                <br/>
+                <p>Fullname: Vo Nguyen Khoi</p>
+                <p>Day of birth: 08-17-2000</p>
+                <p>Sex: Male</p>
+                <p>Work: Student</p>
+                <p>School: International University HCMC</p>
+                <img src="{% static 'images/Quote.PNG' %}" width="100%"/></p>
+
+            </nav> 
+            <article>
+                <h2><u>Picture</u></h2>
+                <br/>
+                <img src="{% static 'images/IU.jpg' %}" width="100%"/>
+                <p>----------------------------------------------------------------------------------------------------------</p>
+                <img src="{% static 'images/C3.JPG' %}" width="100%"/>
+                <p>----------------------------------------------------------------------------------------------------------</p>
+                <img src="{% static 'images/Military1.jpg' %}" width="100%"/>
+                <p>----------------------------------------------------------------------------------------------------------</p>
+                <img src="{% static 'images/WHPH.jpg' %}" width="100%"/>
+                <p>----------------------------------------------------------------------------------------------------------</p>
+                <img src="{% static 'images/PhuQuoc.jpg' %}" width="100%"/>
+            </article>
+        </div>
+    </body>
+</html>
+{% endblock %}
+
+

@@ -1,0 +1,21 @@
+{% extends "pages/base.html" %}
+{% load static %}
+{% block title %}Project{% endblock %}
+
+{% block content %}
+{% for project in Projects %}
+<div class= 'site-container' style= "padding: 1rem; border: 2px solid;">
+    <header class= 'entry-header'> 
+        <center><h4>{{project.title}}</h4></center>
+    </header>
+    <div class= 'entry-content'>
+        {{project.body|safe|linebreaks}}
+        <img src={{project.image.url}} width="100%"/>
+    </div>
+    <footer class= 'entry-footer'>
+        <span style="text-align: right;"><strong>-vnk-</strong></span>
+    </footer>
+</div>
+<br/>
+{% endfor %}
+{% endblock %}
