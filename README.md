@@ -1,4 +1,4 @@
-﻿# Deploy my website by Heroku
+﻿# Deploy my website by Django and Heroku
  
  My website: https://khoivn.herokuapp.com
  
