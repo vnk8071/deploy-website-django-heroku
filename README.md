@@ -6,7 +6,22 @@
  
  
 ##Usage
+
 Install heroku:
 ```bash
 pip install --classic heroku
+```
+
+Login heroku and change directory to deploy-website-heroku:
+```bash
+heroku login
+
+cd deploy-website-heroku
+
+heroku create
+```
+
+Install all packages in local machine:
+```bash
+python requirement.txt
 ```
