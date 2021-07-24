@@ -48,4 +48,4 @@ git commit -m "message commit"
 git push heroku main
 ```
 
-### And enjoy to your website by [nameofdatabase].herokuapp.com
+### And enjoy to your website by [nameofrepository].herokuapp.com
