@@ -5,7 +5,7 @@
  First of all, I want to especially thank Mr. Chau from How Kteam community for providing detailed instructions on Youtube about this blog project. Besides, I also refer to the implementation process on the website of the Corey Schafer Youtube channel
  
  
-##Usage
+## Usage
 
 Install heroku:
 ```bash
@@ -25,3 +25,19 @@ Install all packages in local machine:
 ```bash
 python requirement.txt
 ```
+
+In my website, I use git of heroku and it is the same with Github. 
+```bash
+git init
+
+git add . 
+
+git commit -m "message commit"
+```
+
+### Deploying code
+```bash
+git push heroku main
+```
+
+### And enjoy to your website by [nameofdatabase].herokuapp.com
