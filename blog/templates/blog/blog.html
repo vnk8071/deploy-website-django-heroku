@@ -1,0 +1,41 @@
+{% extends "pages/base.html" %}
+{% load static %}
+{% block title %}Blog{% endblock %}
+
+{% block content %}
+{% for post in Posts %}
+<br/>
+<div class= 'site-container' style="padding: 1rem; border: 2px solid;">
+    <center>
+        <header class= 'entry-header'>
+            <h4><a href= "/blog/{{post.id}}">{{post.title}}</a></h4>
+            <p class= 'entry-meta'>{{post.date_posted|date:"F d, Y"}}</p>
+        </header>
+        <div class= 'entry-content'>
+            <img src={{post.image.url}} width="30%"/>
+        </div>
+    </center>
+    <footer class= 'entry-footer'>
+        <span style="text-align: right;"><strong>-vnk-</strong></span>
+    </footer>
+</div>
+{% endfor %}
+<br/>
+<div class="pagination">
+    <span class="step-links">
+        {% if page_obj.has_previous %}
+            <a href="?page=1">&laquo; First</a>
+            <a href="?page={{ page_obj.previous_page_number }}">Previous</a>
+        {% endif %}
+
+        <span class="current">
+            | Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }} |
+        </span>
+
+        {% if page_obj.has_next %}
+            <a href="?page={{ page_obj.next_page_number }}">Next</a>
+            <a href="?page={{ page_obj.paginator.num_pages }}">Last &raquo;</a>
+        {% endif %}
+    </span>
+</div>
+{% endblock %}

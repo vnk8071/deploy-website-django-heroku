@@ -1,0 +1,26 @@
+{% extends "pages/base.html" %}
+{% load static %}
+{% block title %}{{post.title}}{% endblock %}
+
+{% block content %}
+<h3>{{post.title}}</h3>
+<center><img src={{post.image.url}} width="20%"/></center>
+{{post.body|safe|linebreaks}}
+<br/>
+<small><u><strong>Note</strong></u>: Login to comment this post</small>
+{% for comment in post.comments.all %}
+    <label><strong>{{comment.author}}</strong></label>
+    <textarea cols="45" rows="8">{{comment.body|linebreaks}}</textarea>
+{% endfor %}
+{% if user.username %}
+    <form action="{% url 'post' post.id %}" method='POST'>
+        <div class= 'form-group'>
+            {% csrf_token %}
+            <p><strong>Comment:</strong></p>
+            {{form.body}}
+            <br/>
+            <input type='submit' value= 'Submit'/> 
+        </div>
+    </form>
+{% endif %}
+{% endblock %}
