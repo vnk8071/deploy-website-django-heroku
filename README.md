@@ -23,7 +23,7 @@ heroku create
 
 Install all packages in local machine:
 ```bash
-python requirement.txt
+pip install -r requirements.txt
 ```
 
 Create database by Heroku Postgres
